@@ -1,9 +1,4 @@
-//
-//  SceneDelegate.swift
-//  GameRatingAppSwift
-//
-//  Created by Mustafa Çiçek on 8.09.2022.
-//
+
 
 import UIKit
 
@@ -13,10 +8,40 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        // general foundation working
+        // tabbar controller holding navigation controller, holding view controller
+        
+        let homeNC = createNavigationController(title: "Home", viewContoller: HomeVC(), tabbarItem: .bookmarks, tag: 0)
+        
+        let favoriteNC = createNavigationController(title: "Favorite Games", viewContoller: FavoriteListVC(), tabbarItem: .favorites, tag: 1)
+   
+        
+        let tabBar = createTabBar(viewControllers: [homeNC , favoriteNC])
+        
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+        window?.rootViewController = tabBar
+        window?.makeKeyAndVisible()
+    }
+    
+    func createNavigationController(title: String, viewContoller: UIViewController, tabbarItem: UITabBarItem.SystemItem, tag: Int) -> UINavigationController {
+        
+        let viewController = viewContoller
+        viewController.title = title
+        viewController.tabBarItem = UITabBarItem(tabBarSystemItem: tabbarItem, tag: tag)
+        return UINavigationController(rootViewController: viewController)
+    }
+    
+    func createTabBar(viewControllers: [UIViewController]) -> UITabBarController {
+        let tabBar = UITabBarController()
+        UITabBar.appearance().tintColor = .blue
+        UITabBar.appearance().backgroundColor = .systemGray
+        UITabBar.appearance().unselectedItemTintColor = .white
+        tabBar.viewControllers = viewControllers
+        return tabBar
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -45,9 +70,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
-
-        // Save changes in the application's managed object context when the application transitions to the background.
-        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
 
 
