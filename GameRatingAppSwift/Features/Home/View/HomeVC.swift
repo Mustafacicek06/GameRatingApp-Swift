@@ -23,17 +23,44 @@ class HomeVC: UIViewController {
         
     }()
     
+    private let textField: UITextField = {
+       let field = UITextField()
+        field.text = "Search"
+        field.borderStyle = .bezel
+        field.
+        field.textColor = .green
+        
+        return field
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor  = .white
         // Do any additional setup after loading the view.
         view.addSubview(messageLabel)
+        view.addSubview(textField)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target:self, action:  #selector(searchButtonClicked))
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        // responsive'ligi nasıl yapılıyor ona bak
         messageLabel.frame = CGRect(x: view.frame.width/2 - 100 , y: view.frame.height/2 - 25, width: 200, height: 50)
+        textField.frame = CGRect(x: view.frame.width/2  , y: view.frame.height/2 , width: 200, height: 50)
+        
+        /*
+         let layout = view.layoutMarginsGuide
+         
+         searchButton.translatesAutoresizingMaskIntoConstraints = False
+         searchButton.topAnchor.constraint(equalTo: layout.topAnchor).isActive = true
+         searchButton.leadingAnchor.constraint(equalTo: layout.leadingAnchor).isActive = true
+         
+         */
+    }
+    @objc func searchButtonClicked() {
+        
     }
     
 
