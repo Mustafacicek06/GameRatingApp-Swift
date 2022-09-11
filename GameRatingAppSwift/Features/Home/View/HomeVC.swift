@@ -7,8 +7,23 @@
 
 import UIKit
 import Kingfisher
+import SwiftUI
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController  {
+    lazy var tableView: UITableView = {
+        
+        let tableView = UITableView()
+        // custom cell always register required
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+
+        return tableView
+    }()
+    
+   
+    
+    
+    
     
        lazy var view0: UIView = {
            let view = UIView()
@@ -65,31 +80,92 @@ class HomeVC: UIViewController {
            let pageControl = UIPageControl()
            pageControl.numberOfPages = views.count
            pageControl.currentPage = 0
+           pageControl.currentPageIndicatorTintColor = .black
+           pageControl.backgroundStyle = .prominent
+
            pageControl.addTarget(self, action: #selector(pageControlTapHandler(sender:)), for: .touchUpInside)
            return pageControl
        }()
        
-       @objc
-       func pageControlTapHandler(sender: UIPageControl) {
-           scrollView.scrollTo(horizontalPage: sender.currentPage, animated: true)
-       }
+    lazy var stackView: UIStackView = {
+        let stack = UIStackView()
 
-       override func viewDidLoad() {
-           super.viewDidLoad()
-           // Do any additional setup after loading the view.
-           view.backgroundColor = .white
-           
-           view.addSubview(scrollView)
-           scrollView.edgeTo(view: view)
-           
-           view.addSubview(pageControl)
-           pageControl.pinTo(view)
-       }
+              
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = 8
+        stackView.alignment = .center
+        stack.addArrangedSubview(scrollView)
+        stack.addArrangedSubview(pageControl)
+        stack.addArrangedSubview(tableView)
+        NSLayoutConstraint.activate([
+                    stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
+                    stack.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+                ])
+        
+        return stack
+    }()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
+        allAddSubviews()
+        
+        
+        scrollView.edgeTo(view: view)
+
+        tableView.pinTo(view)
+        pageControl.pinTo(view)
+
+        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 80)
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80)
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80)
+        tableView.heightAnchor.constraint(equalToConstant: 44)
+
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    func allAddSubviews()  {
+        view.addSubview(scrollView)
+        view.addSubview(pageControl)
+        view.addSubview(tableView)
+        //view.addSubview(stackView)
+    }
+    
+    @objc
+    func pageControlTapHandler(sender: UIPageControl) {
+        scrollView.scrollTo(horizontalPage: sender.currentPage, animated: true)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.tableView.frame = view.bounds
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = "hello "
+        
+        return cell
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
 
    }
 
-   extension HomeVC: UIScrollViewDelegate {
+extension HomeVC: UIScrollViewDelegate , UITableViewDelegate, UITableViewDataSource {
+  
+ 
        func scrollViewDidScroll(_ scrollView: UIScrollView) {
            let pageIndex = round(scrollView.contentOffset.x / view.frame.width)
            pageControl.currentPage = Int(pageIndex)
