@@ -11,9 +11,13 @@ public extension UIView {
     
     func pinTo (_ view: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalToConstant: 50).isActive = true
-        leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
+        NSLayoutConstraint.activate([
+            
+            heightAnchor.constraint(equalToConstant: 50),
+            leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: 0),
+        ])
+        
     }
 }

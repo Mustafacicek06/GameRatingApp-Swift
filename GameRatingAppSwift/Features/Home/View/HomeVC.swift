@@ -114,14 +114,26 @@ class HomeVC: UIViewController  {
         
         scrollView.edgeTo(view: view)
 
-        tableView.pinTo(view)
-        pageControl.pinTo(view)
-
-        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 80)
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80)
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80)
-        tableView.heightAnchor.constraint(equalToConstant: 44)
-
+        // tableView.pinTo(view)
+       // pageControl.pinTo(view)
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.topAnchor.constraint(equalTo:  view.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            tableView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            tableView.topAnchor.constraint(equalTo:  scrollView.topAnchor,constant: 350),
+            tableView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
+        
+        ])
+        
+        
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
@@ -144,7 +156,7 @@ class HomeVC: UIViewController  {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.tableView.frame = view.bounds
+        
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
