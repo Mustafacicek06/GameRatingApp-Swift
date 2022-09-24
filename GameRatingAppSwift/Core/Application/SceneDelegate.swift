@@ -14,9 +14,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // general foundation working
         // tabbar controller holding navigation controller, holding view controller
         
-        let homeNC = createNavigationController(title: "Home", viewContoller: HomeVC(), tabbarItem: .bookmarks, tag: 0)
+        let homeNC = createNavigationController(title: "Home", viewContoller: HomeVC(),systemName: "house.fill", tag: 0)
         
-        let favoriteNC = createNavigationController(title: "Favorite Games", viewContoller: FavoriteListVC(), tabbarItem: .favorites, tag: 1)
+        let favoriteNC = createNavigationController(title: "Favorite Games", viewContoller: FavoriteListVC(), systemName: "heart.fill", tag: 1)
    
         
         let tabBar = createTabBar(viewControllers: [homeNC , favoriteNC])
@@ -27,11 +27,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
     }
     
-    func createNavigationController(title: String, viewContoller: UIViewController, tabbarItem: UITabBarItem.SystemItem, tag: Int) -> UINavigationController {
+    func createNavigationController(title: String, viewContoller: UIViewController, systemName: String , tag: Int) -> UINavigationController {
         
         let viewController = viewContoller
-        viewController.title = title
-        viewController.tabBarItem = UITabBarItem(tabBarSystemItem: tabbarItem, tag: tag)
+        
+        viewController.tabBarItem = UITabBarItem(title: title, image: UIImage(systemName: systemName),tag: tag)
+        
+        
         return UINavigationController(rootViewController: viewController)
     }
     

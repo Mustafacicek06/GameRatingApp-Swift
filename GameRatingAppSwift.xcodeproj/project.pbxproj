@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0832EDD028DEF0AD009BE125 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDCF28DEF0AD009BE125 /* NetworkService.swift */; };
+		0832EDD328DEF0E9009BE125 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDD228DEF0E9009BE125 /* NetworkServiceProtocol.swift */; };
+		0832EDD528DEF111009BE125 /* NetworkService+StringPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDD428DEF111009BE125 /* NetworkService+StringPath.swift */; };
+		0832EDD828DEF229009BE125 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0832EDD728DEF229009BE125 /* Alamofire */; };
+		0832EDDA28DEF2CF009BE125 /* BaseConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDD928DEF2CF009BE125 /* BaseConfig.swift */; };
+		0832EDDC28DEF302009BE125 /* BaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDDB28DEF302009BE125 /* BaseError.swift */; };
+		0832EDDE28DEF364009BE125 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDDD28DEF364009BE125 /* BaseResponse.swift */; };
+		0832EDE028DEF3B5009BE125 /* EmptyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDDF28DEF3B5009BE125 /* EmptyModel.swift */; };
+		0832EDE228DEF40A009BE125 /* Codable+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDE128DEF40A009BE125 /* Codable+Alamofire.swift */; };
+		0832EDE428DEFB22009BE125 /* ApplicationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDE328DEFB22009BE125 /* ApplicationConstants.swift */; };
+		0832EDE628DF00D1009BE125 /* StatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDE528DF00D1009BE125 /* StatusCodes.swift */; };
+		0832EDE928DF0F27009BE125 /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDE828DF0F27009BE125 /* NetworkManagerProtocol.swift */; };
+		0832EDEC28DF1AC5009BE125 /* NetworkPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDEB28DF1AC5009BE125 /* NetworkPath.swift */; };
 		086E449128C94177009E0A03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086E449028C94177009E0A03 /* AppDelegate.swift */; };
 		086E449B28C94177009E0A03 /* GameRatingAppSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 086E449928C94177009E0A03 /* GameRatingAppSwift.xcdatamodeld */; };
 		086E449D28C94177009E0A03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 086E449C28C94177009E0A03 /* Assets.xcassets */; };
@@ -42,6 +55,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0832EDCF28DEF0AD009BE125 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		0832EDD228DEF0E9009BE125 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		0832EDD428DEF111009BE125 /* NetworkService+StringPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService+StringPath.swift"; sourceTree = "<group>"; };
+		0832EDD928DEF2CF009BE125 /* BaseConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConfig.swift; sourceTree = "<group>"; };
+		0832EDDB28DEF302009BE125 /* BaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseError.swift; sourceTree = "<group>"; };
+		0832EDDD28DEF364009BE125 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		0832EDDF28DEF3B5009BE125 /* EmptyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyModel.swift; sourceTree = "<group>"; };
+		0832EDE128DEF40A009BE125 /* Codable+Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Alamofire.swift"; sourceTree = "<group>"; };
+		0832EDE328DEFB22009BE125 /* ApplicationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConstants.swift; sourceTree = "<group>"; };
+		0832EDE528DF00D1009BE125 /* StatusCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodes.swift; sourceTree = "<group>"; };
+		0832EDE828DF0F27009BE125 /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
+		0832EDEB28DF1AC5009BE125 /* NetworkPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPath.swift; sourceTree = "<group>"; };
 		086E448D28C94177009E0A03 /* GameRatingAppSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameRatingAppSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		086E449028C94177009E0A03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		086E449A28C94177009E0A03 /* GameRatingAppSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameRatingAppSwift.xcdatamodel; sourceTree = "<group>"; };
@@ -68,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0882D6B828CCC58C008A469C /* Kingfisher in Frameworks */,
+				0832EDD828DEF229009BE125 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +114,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0832EDCB28DEF087009BE125 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				0832EDE528DF00D1009BE125 /* StatusCodes.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		0832EDCC28DEF08D009BE125 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0832EDD428DEF111009BE125 /* NetworkService+StringPath.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		0832EDCD28DEF095009BE125 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0832EDD928DEF2CF009BE125 /* BaseConfig.swift */,
+				0832EDDB28DEF302009BE125 /* BaseError.swift */,
+				0832EDDD28DEF364009BE125 /* BaseResponse.swift */,
+				0832EDDF28DEF3B5009BE125 /* EmptyModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0832EDCE28DEF09B009BE125 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0832EDD228DEF0E9009BE125 /* NetworkServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0832EDE728DF0F12009BE125 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				0832EDE828DF0F27009BE125 /* NetworkManagerProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		0832EDEA28DF1ABB009BE125 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				0832EDEB28DF1AC5009BE125 /* NetworkPath.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		086E448428C94176009E0A03 = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +251,7 @@
 				0882D6B028CCAD90008A469C /* UILabel+.swift */,
 				0882D6B228CCAD9C008A469C /* UIScrollView+.swift */,
 				0882D6B428CCADA5008A469C /* UIView+.swift */,
+				0832EDE128DEF40A009BE125 /* Codable+Alamofire.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -181,6 +259,7 @@
 		086E44C728C94D40009E0A03 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				0832EDE328DEFB22009BE125 /* ApplicationConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -188,6 +267,11 @@
 		086E44C828C94D49009E0A03 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				0832EDCE28DEF09B009BE125 /* Protocols */,
+				0832EDCD28DEF095009BE125 /* Model */,
+				0832EDCC28DEF08D009BE125 /* Extension */,
+				0832EDCB28DEF087009BE125 /* Enums */,
+				0832EDCF28DEF0AD009BE125 /* NetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -227,6 +311,8 @@
 		086E44CC28C94DE1009E0A03 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				0832EDEA28DF1ABB009BE125 /* Enums */,
+				0832EDE728DF0F12009BE125 /* Protocol */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -322,6 +408,7 @@
 			name = GameRatingAppSwift;
 			packageProductDependencies = (
 				0882D6B728CCC58C008A469C /* Kingfisher */,
+				0832EDD728DEF229009BE125 /* Alamofire */,
 			);
 			productName = GameRatingAppSwift;
 			productReference = 086E448D28C94177009E0A03 /* GameRatingAppSwift.app */;
@@ -397,6 +484,7 @@
 			mainGroup = 086E448428C94176009E0A03;
 			packageReferences = (
 				0882D6B628CCC58C008A469C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				0832EDD628DEF229009BE125 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 086E448E28C94177009E0A03 /* Products */;
 			projectDirPath = "";
@@ -440,15 +528,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0832EDDE28DEF364009BE125 /* BaseResponse.swift in Sources */,
+				0832EDD528DEF111009BE125 /* NetworkService+StringPath.swift in Sources */,
+				0832EDE428DEFB22009BE125 /* ApplicationConstants.swift in Sources */,
+				0832EDE228DEF40A009BE125 /* Codable+Alamofire.swift in Sources */,
+				0832EDD028DEF0AD009BE125 /* NetworkService.swift in Sources */,
 				086E449B28C94177009E0A03 /* GameRatingAppSwift.xcdatamodeld in Sources */,
+				0832EDEC28DF1AC5009BE125 /* NetworkPath.swift in Sources */,
 				0882D6B328CCAD9C008A469C /* UIScrollView+.swift in Sources */,
 				08C6AAE628CC6EB500B0000B /* FavoriteListVC.swift in Sources */,
+				0832EDDA28DEF2CF009BE125 /* BaseConfig.swift in Sources */,
 				08C6AAE428CC6E2900B0000B /* HomeVC.swift in Sources */,
 				086E449128C94177009E0A03 /* AppDelegate.swift in Sources */,
 				0882D6B128CCAD90008A469C /* UILabel+.swift in Sources */,
 				0882D6B528CCADA5008A469C /* UIView+.swift in Sources */,
+				0832EDE028DEF3B5009BE125 /* EmptyModel.swift in Sources */,
+				0832EDE628DF00D1009BE125 /* StatusCodes.swift in Sources */,
 				086E44D928C953DF009E0A03 /* HomeViewController.swift in Sources */,
+				0832EDD328DEF0E9009BE125 /* NetworkServiceProtocol.swift in Sources */,
 				08C6AAEA28CC726B00B0000B /* SceneDelegate.swift in Sources */,
+				0832EDE928DF0F27009BE125 /* NetworkManagerProtocol.swift in Sources */,
+				0832EDDC28DEF302009BE125 /* BaseError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,6 +884,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0832EDD628DEF229009BE125 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		0882D6B628CCC58C008A469C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -795,6 +903,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0832EDD728DEF229009BE125 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0832EDD628DEF229009BE125 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		0882D6B728CCC58C008A469C /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0882D6B628CCC58C008A469C /* XCRemoteSwiftPackageReference "Kingfisher" */;
