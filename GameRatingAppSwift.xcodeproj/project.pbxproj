@@ -20,6 +20,9 @@
 		0832EDE628DF00D1009BE125 /* StatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDE528DF00D1009BE125 /* StatusCodes.swift */; };
 		0832EDE928DF0F27009BE125 /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDE828DF0F27009BE125 /* NetworkManagerProtocol.swift */; };
 		0832EDEC28DF1AC5009BE125 /* NetworkPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDEB28DF1AC5009BE125 /* NetworkPath.swift */; };
+		0832EDEE28DF2844009BE125 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDED28DF2844009BE125 /* HomeService.swift */; };
+		0832EDF028DF2855009BE125 /* HomeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDEF28DF2855009BE125 /* HomeServiceProtocol.swift */; };
+		0832EDF228DF2CE3009BE125 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDF128DF2CE3009BE125 /* GameModel.swift */; };
 		086E449128C94177009E0A03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086E449028C94177009E0A03 /* AppDelegate.swift */; };
 		086E449B28C94177009E0A03 /* GameRatingAppSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 086E449928C94177009E0A03 /* GameRatingAppSwift.xcdatamodeld */; };
 		086E449D28C94177009E0A03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 086E449C28C94177009E0A03 /* Assets.xcassets */; };
@@ -67,6 +70,9 @@
 		0832EDE528DF00D1009BE125 /* StatusCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodes.swift; sourceTree = "<group>"; };
 		0832EDE828DF0F27009BE125 /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
 		0832EDEB28DF1AC5009BE125 /* NetworkPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPath.swift; sourceTree = "<group>"; };
+		0832EDED28DF2844009BE125 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		0832EDEF28DF2855009BE125 /* HomeServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServiceProtocol.swift; sourceTree = "<group>"; };
+		0832EDF128DF2CE3009BE125 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		086E448D28C94177009E0A03 /* GameRatingAppSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameRatingAppSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		086E449028C94177009E0A03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		086E449A28C94177009E0A03 /* GameRatingAppSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameRatingAppSwift.xcdatamodel; sourceTree = "<group>"; };
@@ -334,6 +340,7 @@
 		086E44CF28C94DF5009E0A03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0832EDF128DF2CE3009BE125 /* GameModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -357,6 +364,8 @@
 		086E44D228C94E09009E0A03 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				0832EDED28DF2844009BE125 /* HomeService.swift */,
+				0832EDEF28DF2855009BE125 /* HomeServiceProtocol.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -533,9 +542,11 @@
 				0832EDE428DEFB22009BE125 /* ApplicationConstants.swift in Sources */,
 				0832EDE228DEF40A009BE125 /* Codable+Alamofire.swift in Sources */,
 				0832EDD028DEF0AD009BE125 /* NetworkService.swift in Sources */,
+				0832EDF228DF2CE3009BE125 /* GameModel.swift in Sources */,
 				086E449B28C94177009E0A03 /* GameRatingAppSwift.xcdatamodeld in Sources */,
 				0832EDEC28DF1AC5009BE125 /* NetworkPath.swift in Sources */,
 				0882D6B328CCAD9C008A469C /* UIScrollView+.swift in Sources */,
+				0832EDEE28DF2844009BE125 /* HomeService.swift in Sources */,
 				08C6AAE628CC6EB500B0000B /* FavoriteListVC.swift in Sources */,
 				0832EDDA28DEF2CF009BE125 /* BaseConfig.swift in Sources */,
 				08C6AAE428CC6E2900B0000B /* HomeVC.swift in Sources */,
@@ -549,6 +560,7 @@
 				08C6AAEA28CC726B00B0000B /* SceneDelegate.swift in Sources */,
 				0832EDE928DF0F27009BE125 /* NetworkManagerProtocol.swift in Sources */,
 				0832EDDC28DEF302009BE125 /* BaseError.swift in Sources */,
+				0832EDF028DF2855009BE125 /* HomeServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
