@@ -105,33 +105,29 @@ class HomeVC: UIViewController  {
         
         return stack
     }()
+    let blueView: UIView = {
+        let newView = UIView()
+        newView.backgroundColor = .blue
+        return newView
+    }()
+    
+    let redView: UIView = {
+        let newView = UIView()
+        newView.backgroundColor = .red
+        return newView
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .white
         allAddSubviews()
         
+        scrollView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: view.safeAreaLayoutGuide.trailingAnchor, size: .init(width: view.frame.width, height: view.frame.height/3))
         
-        scrollView.edgeTo(view: view)
-
-        // tableView.pinTo(view)
-       // pageControl.pinTo(view)
+        pageControl.anchor(top: scrollView.bottomAnchor, leading: nil, bottom: nil, trailing: scrollView.trailingAnchor, padding: .init(top: 12, left: 0, bottom: 0, right: 0), size: .init(width: view.frame.width, height: 20))
+        tableView.anchor(top: pageControl.bottomAnchor, leading: nil, bottom: nil, trailing: pageControl.trailingAnchor, padding: .init(top: 12, left: 0, bottom: 0, right: 0), size: .init(width: view.frame.width, height: view.frame.height * 0.4))
         
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.topAnchor.constraint(equalTo:  view.topAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
-            tableView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            tableView.topAnchor.constraint(equalTo:  scrollView.topAnchor,constant: 350),
-            tableView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
-        
-        ])
-        
+    
         
         
         self.tableView.delegate = self
@@ -143,10 +139,8 @@ class HomeVC: UIViewController  {
     }
     
     func allAddSubviews()  {
-        view.addSubview(scrollView)
-        view.addSubview(pageControl)
-        view.addSubview(tableView)
-        //view.addSubview(stackView)
+        [scrollView,pageControl ,tableView ].forEach {view.addSubview($0) }
+   
     }
     
     @objc
