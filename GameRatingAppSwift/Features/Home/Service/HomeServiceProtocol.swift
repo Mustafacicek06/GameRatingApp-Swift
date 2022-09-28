@@ -6,6 +6,7 @@
 //
 
 protocol HomeServiceProtocol {
-    func fetchListOfGames()
+    func fetchListOfGames(onSuccess: @escaping ([Result]?)-> Void, onError: @escaping (BaseError) -> Void)
+    
     func fetchDetailsOfGame()
 }

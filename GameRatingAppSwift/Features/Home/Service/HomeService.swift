@@ -5,4 +5,28 @@
 //  Created by Mustafa Çiçek on 24.09.2022.
 //
 
-import Foundation
+import Alamofire
+
+
+final class HomeService: NetworkManagerProtocol, HomeServiceProtocol {
+    
+    
+    
+    
+    
+    
+    func fetchListOfGames(onSuccess: @escaping ([Result]?) -> Void, onError: @escaping (BaseError) -> Void) {
+        service.fetch(path: NetworkPath.GAMES.rawValue, paramaters: nil, data: nil, method: HTTPMethod.get) { (response: BaseResponse<[Result]>) in
+            onSuccess(response.model)
+        } onError: { (error) in
+            onError(error)
+        }
+
+    }
+
+    func fetchDetailsOfGame() {
+        print("a")
+    }
+
+
+}

@@ -8,12 +8,12 @@
 import Foundation
 
 
-struct Result: Decodable {
+struct Result: Codable {
     let result: [GameModel]?
 }
 
 
-struct GameModel: Decodable {
+struct GameModel: Codable {
     let id: Int?
     let name, released: String?
     let backgroundImage: String?

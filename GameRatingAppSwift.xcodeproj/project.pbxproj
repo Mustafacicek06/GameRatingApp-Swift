@@ -23,6 +23,7 @@
 		0832EDEE28DF2844009BE125 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDED28DF2844009BE125 /* HomeService.swift */; };
 		0832EDF028DF2855009BE125 /* HomeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDEF28DF2855009BE125 /* HomeServiceProtocol.swift */; };
 		0832EDF228DF2CE3009BE125 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDF128DF2CE3009BE125 /* GameModel.swift */; };
+		085817A028E4EC1A00BD13B1 /* HomeViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0858179F28E4EC1A00BD13B1 /* HomeViewModelProtocol.swift */; };
 		086E449128C94177009E0A03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086E449028C94177009E0A03 /* AppDelegate.swift */; };
 		086E449B28C94177009E0A03 /* GameRatingAppSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 086E449928C94177009E0A03 /* GameRatingAppSwift.xcdatamodeld */; };
 		086E449D28C94177009E0A03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 086E449C28C94177009E0A03 /* Assets.xcassets */; };
@@ -30,11 +31,13 @@
 		086E44AB28C94177009E0A03 /* GameRatingAppSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086E44AA28C94177009E0A03 /* GameRatingAppSwiftTests.swift */; };
 		086E44B528C94177009E0A03 /* GameRatingAppSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086E44B428C94177009E0A03 /* GameRatingAppSwiftUITests.swift */; };
 		086E44B728C94177009E0A03 /* GameRatingAppSwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086E44B628C94177009E0A03 /* GameRatingAppSwiftUITestsLaunchTests.swift */; };
-		086E44D928C953DF009E0A03 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086E44D828C953DF009E0A03 /* HomeViewController.swift */; };
+		086E44D928C953DF009E0A03 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086E44D828C953DF009E0A03 /* HomeViewModel.swift */; };
 		0882D6B128CCAD90008A469C /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882D6B028CCAD90008A469C /* UILabel+.swift */; };
 		0882D6B328CCAD9C008A469C /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882D6B228CCAD9C008A469C /* UIScrollView+.swift */; };
 		0882D6B528CCADA5008A469C /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882D6B428CCADA5008A469C /* UIView+.swift */; };
 		0882D6B828CCC58C008A469C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0882D6B728CCC58C008A469C /* Kingfisher */; };
+		0888EE5828E4F55F005763AF /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888EE5728E4F55F005763AF /* HomeDataSource.swift */; };
+		0888EE5A28E4F56A005763AF /* HomeTableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888EE5928E4F56A005763AF /* HomeTableViewProtocol.swift */; };
 		08C6AAE428CC6E2900B0000B /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C6AAE328CC6E2900B0000B /* HomeVC.swift */; };
 		08C6AAE628CC6EB500B0000B /* FavoriteListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C6AAE528CC6EB500B0000B /* FavoriteListVC.swift */; };
 		08C6AAEA28CC726B00B0000B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C6AAE928CC726B00B0000B /* SceneDelegate.swift */; };
@@ -73,6 +76,7 @@
 		0832EDED28DF2844009BE125 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		0832EDEF28DF2855009BE125 /* HomeServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServiceProtocol.swift; sourceTree = "<group>"; };
 		0832EDF128DF2CE3009BE125 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		0858179F28E4EC1A00BD13B1 /* HomeViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelProtocol.swift; sourceTree = "<group>"; };
 		086E448D28C94177009E0A03 /* GameRatingAppSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameRatingAppSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		086E449028C94177009E0A03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		086E449A28C94177009E0A03 /* GameRatingAppSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameRatingAppSwift.xcdatamodel; sourceTree = "<group>"; };
@@ -84,10 +88,12 @@
 		086E44B028C94177009E0A03 /* GameRatingAppSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameRatingAppSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		086E44B428C94177009E0A03 /* GameRatingAppSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRatingAppSwiftUITests.swift; sourceTree = "<group>"; };
 		086E44B628C94177009E0A03 /* GameRatingAppSwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRatingAppSwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		086E44D828C953DF009E0A03 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		086E44D828C953DF009E0A03 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		0882D6B028CCAD90008A469C /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		0882D6B228CCAD9C008A469C /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
 		0882D6B428CCADA5008A469C /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		0888EE5728E4F55F005763AF /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
+		0888EE5928E4F56A005763AF /* HomeTableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewProtocol.swift; sourceTree = "<group>"; };
 		08C6AAE328CC6E2900B0000B /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		08C6AAE528CC6EB500B0000B /* FavoriteListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListVC.swift; sourceTree = "<group>"; };
 		08C6AAE928CC726B00B0000B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +175,15 @@
 				0832EDEB28DF1AC5009BE125 /* NetworkPath.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		085817A128E4F50400BD13B1 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				0888EE5728E4F55F005763AF /* HomeDataSource.swift */,
+				0888EE5928E4F56A005763AF /* HomeTableViewProtocol.swift */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		086E448428C94176009E0A03 = {
@@ -348,6 +363,7 @@
 		086E44D028C94E00009E0A03 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				085817A128E4F50400BD13B1 /* TableView */,
 				08C6AAE328CC6E2900B0000B /* HomeVC.swift */,
 			);
 			path = View;
@@ -356,7 +372,8 @@
 		086E44D128C94E04009E0A03 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				086E44D828C953DF009E0A03 /* HomeViewController.swift */,
+				086E44D828C953DF009E0A03 /* HomeViewModel.swift */,
+				0858179F28E4EC1A00BD13B1 /* HomeViewModelProtocol.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -542,11 +559,14 @@
 				0832EDE428DEFB22009BE125 /* ApplicationConstants.swift in Sources */,
 				0832EDE228DEF40A009BE125 /* Codable+Alamofire.swift in Sources */,
 				0832EDD028DEF0AD009BE125 /* NetworkService.swift in Sources */,
+				0888EE5A28E4F56A005763AF /* HomeTableViewProtocol.swift in Sources */,
 				0832EDF228DF2CE3009BE125 /* GameModel.swift in Sources */,
 				086E449B28C94177009E0A03 /* GameRatingAppSwift.xcdatamodeld in Sources */,
 				0832EDEC28DF1AC5009BE125 /* NetworkPath.swift in Sources */,
 				0882D6B328CCAD9C008A469C /* UIScrollView+.swift in Sources */,
 				0832EDEE28DF2844009BE125 /* HomeService.swift in Sources */,
+				085817A028E4EC1A00BD13B1 /* HomeViewModelProtocol.swift in Sources */,
+				0888EE5828E4F55F005763AF /* HomeDataSource.swift in Sources */,
 				08C6AAE628CC6EB500B0000B /* FavoriteListVC.swift in Sources */,
 				0832EDDA28DEF2CF009BE125 /* BaseConfig.swift in Sources */,
 				08C6AAE428CC6E2900B0000B /* HomeVC.swift in Sources */,
@@ -555,7 +575,7 @@
 				0882D6B528CCADA5008A469C /* UIView+.swift in Sources */,
 				0832EDE028DEF3B5009BE125 /* EmptyModel.swift in Sources */,
 				0832EDE628DF00D1009BE125 /* StatusCodes.swift in Sources */,
-				086E44D928C953DF009E0A03 /* HomeViewController.swift in Sources */,
+				086E44D928C953DF009E0A03 /* HomeViewModel.swift in Sources */,
 				0832EDD328DEF0E9009BE125 /* NetworkServiceProtocol.swift in Sources */,
 				08C6AAEA28CC726B00B0000B /* SceneDelegate.swift in Sources */,
 				0832EDE928DF0F27009BE125 /* NetworkManagerProtocol.swift in Sources */,

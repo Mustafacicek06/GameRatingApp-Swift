@@ -6,5 +6,5 @@
 //
 
 enum NetworkPath: String {
-case TODO = "/todo"
+case GAMES = "/games"
 }
