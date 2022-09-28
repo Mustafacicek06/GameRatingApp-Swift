@@ -41,7 +41,11 @@ final class HomeTableViewProvider: NSObject, UITableViewDataSource, UITableViewD
     
     
     
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+           if editingStyle == .delete {
+               delegate?.removeItem(item: gameItems[indexPath.row],index: indexPath.row)
+           }
+       }
     
-    func
     
 }
