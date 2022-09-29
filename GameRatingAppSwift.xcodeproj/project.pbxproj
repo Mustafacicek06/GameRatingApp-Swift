@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		082FC87828E61D5200B32770 /* HomeViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082FC87728E61D5200B32770 /* HomeViewControllerProtocol.swift */; };
 		0832EDD028DEF0AD009BE125 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDCF28DEF0AD009BE125 /* NetworkService.swift */; };
 		0832EDD328DEF0E9009BE125 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDD228DEF0E9009BE125 /* NetworkServiceProtocol.swift */; };
 		0832EDD528DEF111009BE125 /* NetworkService+StringPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832EDD428DEF111009BE125 /* NetworkService+StringPath.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		082FC87728E61D5200B32770 /* HomeViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerProtocol.swift; sourceTree = "<group>"; };
 		0832EDCF28DEF0AD009BE125 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0832EDD228DEF0E9009BE125 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		0832EDD428DEF111009BE125 /* NetworkService+StringPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService+StringPath.swift"; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 			children = (
 				085817A128E4F50400BD13B1 /* TableView */,
 				08C6AAE328CC6E2900B0000B /* HomeVC.swift */,
+				082FC87728E61D5200B32770 /* HomeViewControllerProtocol.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				08C6AAEA28CC726B00B0000B /* SceneDelegate.swift in Sources */,
 				0832EDE928DF0F27009BE125 /* NetworkManagerProtocol.swift in Sources */,
 				0832EDDC28DEF302009BE125 /* BaseError.swift in Sources */,
+				082FC87828E61D5200B32770 /* HomeViewControllerProtocol.swift in Sources */,
 				0832EDF028DF2855009BE125 /* HomeServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

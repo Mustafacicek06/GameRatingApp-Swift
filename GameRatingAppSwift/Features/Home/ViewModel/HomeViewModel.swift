@@ -13,14 +13,18 @@ final class HomeViewModel<T: Codable>: HomeViewModelProtocol {
     var gameItems: [T]
     
     var homeService: HomeServiceProtocol
+    weak var delegate: 
+    
+    
     
     init(homeService: HomeServiceProtocol) {
         self.homeService = homeService
         
+        
     }
     
     func fetchGameItems() {
-        
+       
     }
     
 
