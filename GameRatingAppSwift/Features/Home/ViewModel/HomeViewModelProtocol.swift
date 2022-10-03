@@ -11,7 +11,7 @@ import Foundation
 protocol HomeViewModelProtocol {
     associatedtype T
     var isLoading: Bool {get}
-    var gameItems: [T] {get}
+    var gameItems: Games {get}
     var homeService: HomeServiceProtocol {get}
     func fetchGameItems()
     

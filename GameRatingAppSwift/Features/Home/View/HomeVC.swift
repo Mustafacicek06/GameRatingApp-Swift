@@ -19,7 +19,9 @@ class HomeVC: UIViewController  {
 
         return tableView
     }()
-    
+    lazy var homeViewModel: HomeViewModel<Games> = {
+        return HomeViewModel<Games>(homeService: HomeService(), delegate: self)
+    }()
    
     
     
@@ -87,51 +89,34 @@ class HomeVC: UIViewController  {
            return pageControl
        }()
        
-    lazy var stackView: UIStackView = {
-        let stack = UIStackView()
-
-              
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.spacing = 8
-        stackView.alignment = .center
-        stack.addArrangedSubview(scrollView)
-        stack.addArrangedSubview(pageControl)
-        stack.addArrangedSubview(tableView)
-        NSLayoutConstraint.activate([
-                    stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
-                    stack.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-                ])
-        
-        return stack
-    }()
-    let blueView: UIView = {
-        let newView = UIView()
-        newView.backgroundColor = .blue
-        return newView
-    }()
-    
-    let redView: UIView = {
-        let newView = UIView()
-        newView.backgroundColor = .red
-        return newView
-    }()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .white
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
+        setupView()
+        fetchGames()
+      
+        
+   
+    }
+    
+    private func fetchGames() {
+        DispatchQueue.global(qos: .background).async {
+            self.homeViewModel.fetchGameItems()
+        }
+    }
+    
+    func setupView() {
         allAddSubviews()
         
         scrollView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: view.safeAreaLayoutGuide.trailingAnchor, size: .init(width: view.frame.width, height: view.frame.height/3))
         
         pageControl.anchor(top: scrollView.bottomAnchor, leading: nil, bottom: nil, trailing: scrollView.trailingAnchor, padding: .init(top: 12, left: 0, bottom: 0, right: 0), size: .init(width: view.frame.width, height: 20))
         tableView.anchor(top: pageControl.bottomAnchor, leading: nil, bottom: nil, trailing: pageControl.trailingAnchor, padding: .init(top: 12, left: 0, bottom: 0, right: 0), size: .init(width: view.frame.width, height: view.frame.height * 0.4))
-        
-    
-        
-        
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -177,3 +162,42 @@ extension HomeVC: UIScrollViewDelegate , UITableViewDelegate, UITableViewDataSou
            pageControl.currentPage = Int(pageIndex)
        }
    }
+
+
+
+extension HomeVC: HomeViewControllerProtocol {
+    func navigateToDetail(item: GameModel, selectedIndex: Int) {
+        /*
+        guard let todoDetailViewController = HomeVie else { return }
+               todoDetailViewController.todo = item
+               todoDetailViewController.selectedIndex = selectedIndex
+               DispatchQueue.main.async {
+                   self.present(todoDetailViewController, animated: true, completion: nil)
+               }
+         */
+    }
+    
+    func showError(description: String) {
+
+    }
+
+    func changeLoading(value: Bool) {
+        DispatchQueue.main.async {
+            if value {
+         //       self.loadingIndicator.startAnimating()
+            } else {
+           //     self.loadingIndicator.stopAnimating()
+             //   self.loadingIndicator.isHidden = true
+            }
+        }
+    }
+
+    func updateTableView(items: Games) {
+       // todoTableViewProvider.updateItems(todoItemms: items)
+       // todoTableView.reloadData()
+
+    }
+
+   
+
+}

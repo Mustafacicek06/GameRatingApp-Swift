@@ -7,6 +7,5 @@
 
 
 protocol HomeTableViewProtocol {
-    func removeItem(item: GameModel,index: Int)
     func didSelect(item: GameModel,index: Int)
 }
