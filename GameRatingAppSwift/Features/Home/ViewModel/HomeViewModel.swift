@@ -12,7 +12,7 @@ final class HomeViewModel<T: Codable>: HomeViewModelProtocol , HomeTableViewProt
     
 
     
-    internal var gameItems: Games = Games(result: [])
+    internal var gameItems: Games = Games(results: [])
     
     var homeService: HomeServiceProtocol
     weak var delegate: HomeViewControllerProtocol?
@@ -28,18 +28,19 @@ final class HomeViewModel<T: Codable>: HomeViewModelProtocol , HomeTableViewProt
     
     func fetchGameItems() {
         self.delegate?.changeLoading(value: true)
-        homeService.fetchListOfGames { [weak self] items in
+        homeService.fetchListOfGames { [weak self] games in
             guard let self = self, let delegate = self.delegate else {return}
             delegate.changeLoading(value: false)
             
             
-            guard let items = items else {
+            guard let games = games else {
                 delegate.showError(description: "Not Found")
                 return
             }
             
-            self.gameItems = items
-            delegate.updateTableView(items: items)
+            self.gameItems = games
+           
+            delegate.updateTableView(items: games)
             
             
             

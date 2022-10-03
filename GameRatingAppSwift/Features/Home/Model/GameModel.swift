@@ -9,7 +9,7 @@ import Foundation
 
 
 struct Games: Codable {
-    let result: [GameModel]?
+    let results: [GameModel]?
 }
 
 

@@ -6,5 +6,5 @@
 //
 
 enum NetworkPath: String {
-case GAMES = "/games"
+case GAMES = "games?key=37526aab294342e1930cd7189d879d33"
 }

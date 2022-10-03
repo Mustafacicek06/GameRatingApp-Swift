@@ -99,6 +99,8 @@ class HomeVC: UIViewController  {
         
         setupView()
         fetchGames()
+        
+      
       
         
    
@@ -139,12 +141,16 @@ class HomeVC: UIViewController  {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "hello "
+        if let games = homeViewModel.gameItems.results {
+            cell.textLabel?.text = homeViewModel.gameItems.results?[indexPath.row].name ?? "nil"
+        }
+      
+        
         
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return homeViewModel.gameItems.results?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -191,10 +197,11 @@ extension HomeVC: HomeViewControllerProtocol {
             }
         }
     }
+    
 
     func updateTableView(items: Games) {
-       // todoTableViewProvider.updateItems(todoItemms: items)
-       // todoTableView.reloadData()
+      // tableView.updateItems(todoItemms: items)
+        tableView.reloadData()
 
     }
 

@@ -26,6 +26,7 @@ final class NetworkService: INetworkService {
                    encoding: JSONEncoding.default
         ).validate().responseDecodable(of: T.self)
         { (response) in
+            print("response request \(response.request)" )
             guard let model = response.value else {
 
                 if StatusCodes.isSuccess(val: response.response?.statusCode ?? StatusCodes.notFound.rawValue) {
