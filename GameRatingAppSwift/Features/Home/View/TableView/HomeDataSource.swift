@@ -22,13 +22,14 @@ final class HomeTableViewProvider: NSObject, UITableViewDataSource, UITableViewD
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
         return gameItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = gameItems[indexPath.row].name
-        
+      
         return cell
     }
     

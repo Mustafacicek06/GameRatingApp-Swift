@@ -7,7 +7,7 @@
 
 protocol HomeViewControllerProtocol: AnyObject {
     func changeLoading(value: Bool)
-    func updateTableView(items: Games)
+    func updateTableView(items: [GameModel])
     func navigateToDetail(item: GameModel, selectedIndex: Int)
     func showError(description: String)
 }

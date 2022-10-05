@@ -12,7 +12,7 @@ final class HomeViewModel<T: Codable>: HomeViewModelProtocol , HomeTableViewProt
     
 
     
-    internal var gameItems: Games = Games(results: [])
+    internal var gameItems: [GameModel] = []
     
     var homeService: HomeServiceProtocol
     weak var delegate: HomeViewControllerProtocol?
@@ -38,9 +38,14 @@ final class HomeViewModel<T: Codable>: HomeViewModelProtocol , HomeTableViewProt
                 return
             }
             
-            self.gameItems = games
+            self.gameItems = games.results!
+            
+            
+            
+                delegate.updateTableView(items: games.results!)
+            
            
-            delegate.updateTableView(items: games)
+           
             
             
             

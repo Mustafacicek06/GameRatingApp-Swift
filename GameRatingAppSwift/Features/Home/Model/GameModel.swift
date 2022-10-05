@@ -29,3 +29,10 @@ struct GameModel: Codable {
 
 
 }
+
+
+let mockDatas: [GameModel] = [
+    GameModel(id:1 , name: "mustafa", released: "20.20.20",backgroundImage:"img", rating: 2.5),
+    GameModel(id:1 , name: "çiçek", released: "20.20.20",backgroundImage:"img", rating: 2.5),
+    GameModel(id:1 , name: "yasin", released: "20.20.20",backgroundImage:"img", rating: 2.5),
+]
