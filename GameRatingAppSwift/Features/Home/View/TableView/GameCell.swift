@@ -11,17 +11,22 @@ class GameCell: UITableViewCell {
 
     var gameImageView = UIImageView()
     var gameTitleLabel = UILabel()
+    var gameDescriptionLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         addSubview(gameImageView)
         addSubview(gameTitleLabel)
+        addSubview(gameDescriptionLabel)
         
         configureImageView()
         configureTitleLabel()
+        configureDescriptionLabel()
+        
         setImageConstraints()
         setTitleLabelConstraints()
+        setDescriptionLabelConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -29,9 +34,16 @@ class GameCell: UITableViewCell {
     }
     
     func setGame(game: GameModel) {
-       
-        gameImageView.sd_setImage(with: URL(string: game.backgroundImage!))
-        gameTitleLabel.text = game.name
+      
+            gameImageView.sd_setImage(with: URL(string: game.backgroundImage!))
+            gameTitleLabel.text = game.name
+            if let releaseDate = game.released {
+                gameDescriptionLabel.text = releaseDate
+            
+            }
+         
+
+        
     }
     
     func configureImageView() {
@@ -42,6 +54,11 @@ class GameCell: UITableViewCell {
     func configureTitleLabel() {
         gameTitleLabel.numberOfLines = 0
         gameTitleLabel.adjustsFontSizeToFitWidth = true
+    }
+    
+    func configureDescriptionLabel() {
+        gameDescriptionLabel.numberOfLines = 0
+        gameDescriptionLabel.adjustsFontSizeToFitWidth = true
     }
     
     func setImageConstraints()  {
@@ -61,7 +78,7 @@ class GameCell: UITableViewCell {
     func setTitleLabelConstraints() {
         gameTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            gameTitleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            gameTitleLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant:  -7),
             gameTitleLabel.leadingAnchor.constraint(equalTo: gameImageView.trailingAnchor,constant: 20),
             gameTitleLabel.heightAnchor.constraint(equalToConstant: 50),
             gameTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -12)
@@ -69,7 +86,17 @@ class GameCell: UITableViewCell {
         ])
         
     }
-    
+    func setDescriptionLabelConstraints() {
+        gameDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            gameDescriptionLabel.centerYAnchor.constraint(equalTo: centerYAnchor,constant: 10),
+            gameDescriptionLabel.leadingAnchor.constraint(equalTo: gameImageView.trailingAnchor,constant: 20),
+            gameDescriptionLabel.heightAnchor.constraint(equalToConstant: 40),
+            gameDescriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -12)
+        
+        ])
+        
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

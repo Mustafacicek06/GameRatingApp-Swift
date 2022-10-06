@@ -33,7 +33,7 @@ final class HomeTableViewProvider: NSObject, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cells.gameCell) as! GameCell
         cell.setGame(game: gameItems[indexPath.row])
-     
+        
         return cell
     }
     

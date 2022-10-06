@@ -16,6 +16,7 @@ class HomeVC: UIViewController {
         let tableView = UITableView()
         // custom cell always register required
         tableView.register(GameCell.self, forCellReuseIdentifier: Cells.gameCell)
+        tableView.rowHeight = view.bounds.height * 0.09
 
 
         return tableView
