@@ -20,6 +20,18 @@ public extension UIView {
         ])
         
     }
+    // example: ParentView -> ChildView -> ChildView  -- Blockchain components
+    func pin(to superView: UIView)  {
+        translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            topAnchor.constraint(equalTo: superView.topAnchor),
+            bottomAnchor.constraint(equalTo: superView.bottomAnchor),
+            leadingAnchor.constraint(equalTo: superView.leadingAnchor),
+            trailingAnchor.constraint(equalTo: superView.trailingAnchor)
+            
+        
+        ])
+    }
     
     func anchor(top: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, trailing: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero)  {
         translatesAutoresizingMaskIntoConstraints = false
