@@ -7,6 +7,9 @@
 
 import UIKit
 
+struct Cells {
+    static let gameCell = "gameCell"
+}
 
 final class HomeTableViewProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
     private var gameItems: [GameModel]
@@ -14,6 +17,7 @@ final class HomeTableViewProvider: NSObject, UITableViewDataSource, UITableViewD
     
     init(gameItems: [GameModel]) {
         self.gameItems = gameItems
+         
         super.init()
     }
     
@@ -27,9 +31,9 @@ final class HomeTableViewProvider: NSObject, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = gameItems[indexPath.row].name
-        cell.conten
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.gameCell) as! GameCell
+        cell.setGame(game: gameItems[indexPath.row])
+     
         return cell
     }
     

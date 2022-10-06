@@ -15,7 +15,7 @@ class HomeVC: UIViewController {
 
         let tableView = UITableView()
         // custom cell always register required
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(GameCell.self, forCellReuseIdentifier: Cells.gameCell)
 
 
         return tableView
