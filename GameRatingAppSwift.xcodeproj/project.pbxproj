@@ -42,6 +42,7 @@
 		08C6AAE428CC6E2900B0000B /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C6AAE328CC6E2900B0000B /* HomeVC.swift */; };
 		08C6AAE628CC6EB500B0000B /* FavoriteListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C6AAE528CC6EB500B0000B /* FavoriteListVC.swift */; };
 		08C6AAEA28CC726B00B0000B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C6AAE928CC726B00B0000B /* SceneDelegate.swift */; };
+		08F50D7A28EF80BA003B7891 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 08F50D7928EF80BA003B7891 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08F50D7A28EF80BA003B7891 /* SDWebImage in Frameworks */,
 				0882D6B828CCC58C008A469C /* Kingfisher in Frameworks */,
 				0832EDD828DEF229009BE125 /* Alamofire in Frameworks */,
 			);
@@ -438,6 +440,7 @@
 			packageProductDependencies = (
 				0882D6B728CCC58C008A469C /* Kingfisher */,
 				0832EDD728DEF229009BE125 /* Alamofire */,
+				08F50D7928EF80BA003B7891 /* SDWebImage */,
 			);
 			productName = GameRatingAppSwift;
 			productReference = 086E448D28C94177009E0A03 /* GameRatingAppSwift.app */;
@@ -514,6 +517,7 @@
 			packageReferences = (
 				0882D6B628CCC58C008A469C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				0832EDD628DEF229009BE125 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				08F50D7828EF80BA003B7891 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 086E448E28C94177009E0A03 /* Products */;
 			projectDirPath = "";
@@ -936,6 +940,14 @@
 				kind = branch;
 			};
 		};
+		08F50D7828EF80BA003B7891 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -948,6 +960,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0882D6B628CCC58C008A469C /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		08F50D7928EF80BA003B7891 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08F50D7828EF80BA003B7891 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 

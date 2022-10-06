@@ -6,8 +6,9 @@
 //
 
 import UIKit
-import Kingfisher
+import SDWebImage
 import SwiftUI
+
 
 class HomeVC: UIViewController {
     lazy var tableView: UITableView = {
@@ -41,42 +42,39 @@ class HomeVC: UIViewController {
 
 
 
-    lazy var view0: UIView = {
-        let view = UIView()
-        view.backgroundColor = .systemTeal
-        let label = UILabel()
-        label.text = "Page 0"
-        label.textAlignment = .center
-        view.addSubview(label)
-        label.edgeTo(view: view)
-        return view
+    lazy var image1: UIImageView = {
+        let image = UIImageView()
+        image.backgroundColor = .systemTeal
+        image.sd_setImage(with: URL(string: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGVuc3xlbnwwfHwwfHw%3D&w=1000&q=80"))
+        
+        view.addSubview(image)
+        
+        return image
     }()
     
     
 
-    lazy var view1: UIView = {
-        let view = UIView()
-        view.backgroundColor = .systemPink
-        let label = UILabel()
-        label.text = "Page 1"
-        label.textAlignment = .center
-        view.addSubview(label)
-        label.edgeTo(view: view)
-        return view
+    lazy var image2: UIImageView = {
+        let image = UIImageView()
+        image.backgroundColor = .systemTeal
+        image.sd_setImage(with: URL(string: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGVuc3xlbnwwfHwwfHw%3D&w=1000&q=80"))
+        
+        view.addSubview(image)
+        
+        return image
     }()
 
-    lazy var view2: UIView = {
-        let view = UIView()
-        view.backgroundColor = .systemYellow
-        let label = UILabel()
-        label.text = "Page 2"
-        label.textAlignment = .center
-        view.addSubview(label)
-        label.edgeTo(view: view)
-        return view
+    lazy var image3: UIImageView = {
+        let image = UIImageView()
+        image.backgroundColor = .systemTeal
+        image.sd_setImage(with: URL(string: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGVuc3xlbnwwfHwwfHw%3D&w=1000&q=80"))
+        
+        view.addSubview(image)
+        
+        return image
     }()
 
-    lazy var views = [view0, view1, view2]
+    lazy var views = [image1, image2, image3]
 
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -208,13 +206,20 @@ extension HomeVC: HomeViewControllerProtocol {
 
         self.gameItems = homeViewModel.gameItems
         DispatchQueue.main.async { [self] in
-            print(self.gameItems.count)
-            self.homeTableViewProvider.updateItems(gameItems: gameItems)
-            self.tableView.reloadData()
+           homeTableViewProvider.updateItems(gameItems: gameItems)
+           tableView.reloadData()
+            updateImageViews()
+          
 
         }
     }
-
+    func updateImageViews(){
+       
+            image1.sd_setImage(with: URL(string: gameItems[0].backgroundImage!))
+            image2.sd_setImage(with: URL(string: gameItems[1].backgroundImage!))
+            image3.sd_setImage(with: URL(string: gameItems[2].backgroundImage!))
+        
+    }
 
 
 
